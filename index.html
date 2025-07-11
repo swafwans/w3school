@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3Schools Certificates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a252f;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #1a252f;
+        }
+
+        .logo {
+            height: 40px;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .certificate-section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .certificate-section h1 {
+            color: #4caf50;
+            font-size: 1.5em;
+        }
+
+        .certificate-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            border: 2px solid #4caf50;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .certificate-info {
+            text-align: center;
+        }
+
+        .certificate-icon {
+            width: 50px;
+            height: 50px;
+            background: url('certificate-icon.png') no-repeat;
+            margin-bottom: 10px;
+        }
+
+        .download-btn {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .learn-more {
+            color: #4caf50;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        .certificate-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .cookie-notice {
+            background-color: #fff;
+            color: #000;
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        .accept-btn, .reject-btn {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .accept-btn {
+            background-color: #1a252f;
+            color: #fff;
+        }
+
+        .reject-btn {
+            background-color: #ccc;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: #1a252f;
+                text-align: center;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                margin: 10px 0;
+                font-size: 1.1em;
+            }
+
+            .menu-toggle {
+                display: block;
+                font-size: 1.5em;
+                background: none;
+                border: none;
+                color: #fff;
+                cursor: pointer;
+            }
+
+            .certificate-container {
+                flex-direction: column;
+            }
+
+            .certificate-info, .certificate-image {
+                width: 100%;
+            }
+
+            .cookie-notice {
+                font-size: 0.8em;
+            }
+
+            .accept-btn, .reject-btn {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+
+        /* Hide menu toggle on desktop */
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="w3schools-logo.png" alt="W3Schools Logo" class="logo">
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav id="navMenu">
+            <a href="https://www.w3schools.com/">Learn to code</a>
+            <a href="https://campus.w3schools.com/en-in/collections/certifications">Exams</a>
+            <a href="https://campus.w3schools.com/en-in/collections/course-catalog">Courses</a>
+            <a href="https://www.w3schools.com/spaces/index.php">Create Website</a>
+        </nav>
+    </header>
+    <main>
+        <section class="certificate-section">
+            <h1>W3Schools Certificates</h1>
+            <p>This page verifies the authenticity of W3Schools certifications.</p>
+            <div class="certificate-container">
+                <div class="certificate-info">
+                    <div class="certificate-icon"></div>
+                    <h2>JavaScript</h2>
+                    <p><span>Completed:</span> June 4, 2022</p>
+                    <button class="download-btn" onclick="downloadCertificate()">Download certificate</button>
+                    <a href="https://campus.w3schools.com/en-in/collections/certifications/products/javascript-certificate" class="learn-more">Learn more about this exam</a>
+                </div>
+                <div class="certificate-image">
+                    <img src="certificate.jpg" alt="Certificate of Completion">
+                </div>
+            </div>
+        </section>
+        <div class="cookie-notice" id="cookieNotice">
+            <p>We use cookies! This site uses cookies for performance, analytics, and personalization which helps us improve our site. This will be set only after consent. For more details relative to cookies and other sensitive data, please read the full privacy policy.</p>
+            <button class="accept-btn" onclick="acceptCookies()">Accept</button>
+            <button class="reject-btn" onclick="rejectCookies()">Reject</button>
+        </div>
+    </main>
+    <footer>
+        <p>© 1999 - 2025 W3Schools. All rights reserved. Cookie policy, Privacy and Terms.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById("navMenu");
+            nav.classList.toggle("active");
+        }
+
+        function downloadCertificate() {
+            alert("Downloading certificate... (Replace with actual download logic)");
+            // Add logic to download the certificate image here
+        }
+
+        function acceptCookies() {
+            document.getElementById("cookieNotice").style.display = "none";
+            alert("Cookies accepted!");
+            // Add cookie acceptance logic here
+        }
+
+        function rejectCookies() {
+            document.getElementById("cookieNotice").style.display = "none";
+            alert("Cookies rejected!");
+            // Add cookie rejection logic here
+        }
+
+        window.onload = function() {
+            document.getElementById("cookieNotice").style.display = "block";
+        };
+    </script>
+</body>
+</html>
